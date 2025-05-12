@@ -25,6 +25,7 @@
   show-abstract: true,
   acronym-spacing: 5em,
   glossary-spacing: 1.5em,
+  chapter-num-scale: 10,
   abstract: none,
   appendix: none,
   acronyms: none,
@@ -62,6 +63,7 @@
     show-abstract,
     acronym-spacing,
     glossary-spacing,
+    chapter-num-scale,
     abstract,
     appendix,
     acronyms,
@@ -267,13 +269,13 @@
     pagebreak()
     context{ 
       if in-body.get() {
-        v(page-grid * 10)
+        v(page-grid * chapter-num-scale)
         place(              // place heading number prominently at the upper right corner
           top + right,
           dx: 9pt,          // slight adjustment for optimal alignment with right margin
           text(counter(heading).display(), 
             top-edge: "bounds",
-            size: page-grid * 10, weight: 900, luma(235), 
+            size: page-grid * chapter-num-scale, weight: 900, luma(235), 
           )
         )
         text(               // heading text on separate line
