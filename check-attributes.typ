@@ -12,6 +12,7 @@
   show-abstract,
   acronym-spacing,
   glossary-spacing,
+  chapter-num-scale,
   abstract,
   appendix,
   acronyms,
