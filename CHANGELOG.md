@@ -1,5 +1,12 @@
 # Changelog
 
+
+
+## 0.3.0
+
+### Features
+- tables of figures/tables: toggle with `show-table-of-figures` and `show-table-of-tables`; optional page breaks via `table-of-figures-page-break` and `table-of-tables-page-break`
+
 ## 0.2.0
 
 

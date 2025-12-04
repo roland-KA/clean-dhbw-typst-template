@@ -90,8 +90,18 @@ The content of this thesis may not be made available, either in its entirety or 
 )
 
 #let TABLE_OF_CONTENTS = (
-  "de": "Inhalt",
-  "en": "Contents",
+  "de": "Inhaltsverzeichnis",
+  "en": "Table of Contents",
+)
+
+#let TABLE_OF_FIGURES = (
+  "de": "Bildverzeichnis",
+  "en": "List of Figures",
+)
+
+#let TABLE_OF_TABLES = (
+  "de": "Tabellenverzeichnis",
+  "en": "List of Tables",
 )
 
 #let ABSTRACT = (

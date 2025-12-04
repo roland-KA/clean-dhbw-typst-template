@@ -25,6 +25,8 @@
   show-confidentiality-statement: true,
   show-declaration-of-authorship: true,
   show-table-of-contents: true,
+  show-table-of-figures: true,
+  show-table-of-tables: true,
   show-info-page: false,
   show-abstract: true,
   abstract: none,
@@ -48,6 +50,8 @@
   ignored-link-label-keys-for-highlighting: (),
   abbr-list-csv: "abbr.csv",
   abbr-page-break: true,
+  table-of-figures-page-break: false,
+  table-of-tables-page-break: false,
   pdf-version: "v1.0.0",
   body,
 ) = {
@@ -259,7 +263,7 @@
     )
   }
 
-    // Abbreviations 
+  // Abbreviations 
 
   if abbr-page-break {
     pagebreak()
@@ -274,6 +278,46 @@
   abbr.list()
 
 
+  // Figures
+  show outline.entry.where(level: 1): it => {
+    set block(above: page-grid - body-size)
+    set text(font: heading-font, size: body-size)
+    link(
+      it.element.location(),  // make entry linkable
+      it.indented(
+          it.prefix(),
+          it.body() + "  " +
+            box(width: 1fr, repeat([.], gap: 2pt), baseline: 30%) +
+            "  " + it.page()
+      )
+    )
+  }
+  
+  if(show-table-of-figures){
+    if table-of-figures-page-break {
+      pagebreak()
+    }
+    [= #TABLE_OF_FIGURES.at(language)]
+    outline(
+    title: none, 
+    target: figure.where(kind: image),
+      indent: auto,
+      depth: 3,
+    )
+  }
+  
+  if(show-table-of-tables){
+    if table-of-tables-page-break {
+      pagebreak()
+    }
+    [= #TABLE_OF_TABLES.at(language)]
+    outline(
+    title: none, 
+    target: figure.where(kind: table), //TODO verfiy
+      indent: auto,
+      depth: 3,
+    )
+  }
 
   set page(numbering: "1") // numbering for body body
   in-frontmatter.update(false)  // end of frontmatter
