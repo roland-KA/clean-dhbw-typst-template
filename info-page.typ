@@ -1,9 +1,17 @@
+#import "confidentiality-statement.typ": *
+
 #let info-page(
   authors,
   title,
   date,
   date-format,
   pdf-version,
+  show-confidentiality-statement-at-beginning,
+  confidentiality-statement-content,
+  university,
+  university-location,
+  language,
+  many-authors,
 ) = {
 
   // ---------- Page Setup ---------------------------------------
@@ -11,6 +19,20 @@
   set page(
     margin: (top: 4cm, bottom: 3cm, left: 4cm, right: 3cm),
   )
+
+  if (show-confidentiality-statement-at-beginning) {
+    confidentiality-statement(
+      authors,
+      title,
+      confidentiality-statement-content,
+      university,
+      university-location,
+      date,
+      language,
+      many-authors,
+      date-format,
+  )
+  }
 
   // ---------- Info at Bottom of Page ---------------------------------------
 

@@ -11,15 +11,15 @@
   many-authors,
   date-format,
 ) = {
-  let authors-by-city = authors.map(author => author.company.city).dedup()
-
+  let authors-by-city = authors.map(author => author.city).dedup()
+  
   heading(level: 1, CONFIDENTIALITY_STATEMENT_TITLE.at(language))
   v(1em)
 
   if (confidentiality-statement-content != none) {
     confidentiality-statement-content
   } else {
-    let authors-by-company = authors.map(author => author.company.name).dedup()
+    let authors-by-company = authors.map(author => author.name).dedup()
     let authors-by-study = authors.map(author => author.course-of-studies).dedup()
     let companies = authors-by-company.join(", ", last: AND.at(language))
 

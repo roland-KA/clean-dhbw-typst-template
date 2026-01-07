@@ -22,7 +22,8 @@
   at-university: none,
   confidentiality-marker: (display: false),
   type-of-thesis: none,
-  show-confidentiality-statement: true,
+  show-confidentiality-statement-at-beginning: true,
+  show-confidentiality-statement-at-end: true,
   show-declaration-of-authorship: true,
   show-table-of-contents: true,
   show-table-of-figures: true,
@@ -56,6 +57,8 @@
   body,
 ) = {
   // check required attributes
+  let show-confidentiality-statement = show-confidentiality-statement-at-beginning
+  let many-authors = authors.len() > 3
   check-attributes(
     title,
     authors,
@@ -99,7 +102,6 @@
   // ---------- Basic Document Settings ---------------------------------------
 
   set document(title: title, author: authors.map(author => author.name))
-  let many-authors = authors.len() > 3
   let in-frontmatter = state("in-frontmatter", true)    // to control page number format in frontmatter
   let in-body = state("in-body", true)                  // to control heading formatting in/outside of body
 
@@ -152,6 +154,11 @@
 
   // ========== INFO PAGE ========================================
   
+  // ---------- Heading Format (Part I) ---------------------------------------
+
+  show heading: set text(weight: "bold", font: heading-font)
+  show heading.where(level: 1): it => {v(2 * page-grid) + text(size: 2 * page-grid, it)}
+
   if (show-info-page) {
     pagebreak()
     info-page(
@@ -160,6 +167,12 @@
       date,
       date-format,
       pdf-version,
+      show-confidentiality-statement-at-beginning,
+      confidentiality-statement-content,
+      university,
+      university-location,
+      language,
+      many-authors,
     )
   }
 
@@ -215,11 +228,6 @@
 
   // ========== FRONTMATTER ========================================
   
-  // ---------- Heading Format (Part I) ---------------------------------------
-
-  show heading: set text(weight: "bold", font: heading-font)
-  show heading.where(level: 1): it => {v(2 * page-grid) + text(size: 2 * page-grid, it)}
-
   // ---------- Abstract ---------------------------------------
 
   if (show-abstract and abstract != none) {
@@ -408,7 +416,7 @@
 
   // ---------- Confidentiality Statement ---------------------------------------
 
-  if (not at-university and show-confidentiality-statement) {
+  if (show-confidentiality-statement-at-end) {
     confidentiality-statement(
       authors,
       title,
