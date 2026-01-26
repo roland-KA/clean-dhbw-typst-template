@@ -72,7 +72,7 @@
       0pt
     }
 
-    if (type-of-degree == none and type-of-thesis == none) {
+    if (type-of-thesis == none) {
       title-spacing = 0em
     }
 
