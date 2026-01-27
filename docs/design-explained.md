@@ -32,7 +32,7 @@ I've added the "*optional*" markers from a content viewpoint to the elements in 
 
 This structure reduces the frontmatter to 2-4 pages as it contains in its simplest form just the title page and one page for the TOC or, in a more typical case of a thesis with an abstract and two pages of the TOC, of four pages.
 
-**Page numbering** ist done as follows:
+**Page numbering** is done as follows:
 - Titel page: no page number
 - Frontmatter (TOC & abstract): small roman numbers
 - Rest of the document: arabic numerals (starting with 1 on the first page of chapter 1)
