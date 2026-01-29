@@ -28,8 +28,7 @@ The only elements I consider ***necessary*** as ***frontmatter*** are:
 - title-page
 - table of contents 
 
-Even the latter is debatable in a PDF-docu
-ment if a PDF-TOC is included, which can be displayed nicely in the sidebar of the PDF reader. 
+Even the latter is debatable in a PDF-document if a PDF-TOC is included, which can be displayed nicely in the sidebar of the PDF reader. 
 
 Considering the above mentioned end-users, it is also debatable, if these documents really need an abstract. All stakeholders involved typically discuss what contents is expected before the document is written and the introductory chapter (if done well) transports these ideas too (perhaps on 2-5 pages instead of one as in an abstract).
 
