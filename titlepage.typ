@@ -60,61 +60,13 @@
   
   // ---------- Confidentiality Marker (optional) ---------------------------------------
   
-  if (confidentiality-marker.display) {
+  if (confidentiality-marker.display and show-confidentiality-statement) {
     place(
       dy: 2 * page-grid,
       bottom + center,
       text(red, 15pt, weight: "bold", "Diese Arbeit enthält einen Sperrvermerk")
     )
   }
-
-  // if (confidentiality-marker.display) {
-  //   let size = 7em
-  //   let display = false
-  //   let title-spacing = 2em
-  //   let x-offset = 0pt
-
-  //   let y-offset = if (many-authors) {
-  //     7pt
-  //   } else {
-  //     0pt
-  //   }
-
-  //   if (type-of-thesis == none) {
-  //     title-spacing = 0em
-  //   }
-
-  //   if ("display" in confidentiality-marker) {
-  //     display = confidentiality-marker.display
-  //   }
-  //   if ("offset-x" in confidentiality-marker) {
-  //     x-offset = confidentiality-marker.offset-x
-  //   }
-  //   if ("offset-y" in confidentiality-marker) {
-  //     y-offset = confidentiality-marker.offset-y
-  //   }
-  //   if ("size" in confidentiality-marker) {
-  //     size = confidentiality-marker.size
-  //   }
-  //   if ("title-spacing" in confidentiality-marker) {
-  //     confidentiality-marker.title-spacing
-  //   }
-
-  //   v(title-spacing)
-
-  //   let color = if (show-confidentiality-statement) {
-  //     red
-  //   } else {
-  //     green.darken(5%)
-  //   }
-
-  //   place(
-  //     right,
-  //     dx: 35pt + x-offset,
-  //     dy: -70pt + y-offset,
-  //     circle(radius: size / 2, fill: color),
-  //   )
-  // }
 
   // ---------- Sub-Title-Infos ---------------------------------------
   // 
