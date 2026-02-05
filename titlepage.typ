@@ -208,7 +208,8 @@
 
       // confidentiality - marker
       if (confidentiality-marker.display and show-confidentiality-statement) {
-        text(weight: "bold", fill: rgb(226, 0, 26), "Diese Arbeit enthält einen Sperrvermerk")
+        text(weight: "bold", fill: rgb(226, 0, 26), 
+        CONFIDENTIALITY_MARKER.at(language))
       },
     ),
   )

@@ -121,3 +121,8 @@ The content of this thesis may not be made available, either in its entirety or 
   "de": "Anhang",
   "en": "Appendix",
 )
+
+#let CONFIDENTIALITY_MARKER = (
+  "de": "Diese Arbeit enthält einen Sperrvermerk",
+  "en": "This thesis contains a confidentiality notice",
+)
