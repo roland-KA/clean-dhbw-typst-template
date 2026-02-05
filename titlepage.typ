@@ -20,12 +20,11 @@
   university-short,
   page-grid,
 ) = {
-
   // ---------- Page Setup ---------------------------------------
 
-  set page(     
+  set page(
     // identical to document
-    margin: (top: 4cm, bottom: 3cm, left: 4cm, right: 3cm),   
+    margin: (top: 4cm, bottom: 3cm, left: 4cm, right: 3cm),
   )
   // The whole page in `title-font`, all elements centered
   set text(font: title-font, size: page-grid)
@@ -33,43 +32,35 @@
 
   // ---------- Logo(s) ---------------------------------------
 
-  if logo-left != none and logo-right == none {           // one logo: centered
-    place(                                
+  if logo-left != none and logo-right == none {
+    // one logo: centered
+    place(
       top + center,
       dy: -3 * page-grid,
-      box(logo-left, height: 3 * page-grid) 
+      box(logo-left, height: 3 * page-grid),
     )
-  } else if logo-left != none and logo-right != none {    // two logos: left & right
+  } else if logo-left != none and logo-right != none {
+    // two logos: left & right
     place(
       top + left,
       dy: -4 * page-grid,
-      box(logo-left, height: 3 * page-grid) 
+      box(logo-left, height: 3 * page-grid),
     )
     place(
       top + right,
       dy: -4 * page-grid,
-      box(logo-right, height: 3 * page-grid) 
+      box(logo-right, height: 3 * page-grid),
     )
   }
 
   // ---------- Title ---------------------------------------
 
-  v(7 * page-grid)     
+  v(7 * page-grid)
   text(weight: "bold", fill: luma(80), size: 1.5 * page-grid, title)
   v(page-grid)
-  
-  // ---------- Confidentiality Marker (optional) ---------------------------------------
-  
-  if (confidentiality-marker.display and show-confidentiality-statement) {
-    place(
-      dy: 2 * page-grid,
-      bottom + center,
-      text(red, 15pt, weight: "bold", "Diese Arbeit enthält einen Sperrvermerk")
-    )
-  }
 
   // ---------- Sub-Title-Infos ---------------------------------------
-  // 
+  //
   // type of thesis (optional)
   if (type-of-thesis != none and type-of-thesis.len() > 0) {
     align(center, text(size: page-grid, type-of-thesis))
@@ -77,7 +68,7 @@
   }
 
   // course of studies
-  text(TITLEPAGE_SECTION_B.at(language) + authors.map(author => author.course-of-studies).dedup().join(" | "),)
+  text(TITLEPAGE_SECTION_B.at(language) + authors.map(author => author.course-of-studies).dedup().join(" | "))
   v(0.25 * page-grid)
 
   // university
@@ -101,7 +92,7 @@
           text(author.name)
         },
       ))
-    )
+    ),
   )
 
   // ---------- Info-Block ---------------------------------------
@@ -109,106 +100,116 @@
   set text(size: 11pt)
   place(
     bottom + center,
-    grid(
-      columns: (auto, auto),
-      row-gutter: 1em,
-      column-gutter: 1em,
-      align: (right, left),
+    stack(
+      dir: ttb,
+      spacing: 1em,
+      grid(
+        columns: (auto, auto),
+        row-gutter: 1em,
+        column-gutter: 1em,
+        align: (right, left),
 
-      // submission date
-      text(weight: "bold", fill: luma(80), TITLEPAGE_DATE.at(language)),
-      text(
-        if (type(date) == datetime) {
-          date.display(date-format)
-        } else {
-          date.at(0).display(date-format) + [ -- ] + date.at(1).display(date-format)
+        // submission date
+        text(weight: "bold", fill: luma(80), TITLEPAGE_DATE.at(language)),
+        text(
+          if (type(date) == datetime) {
+            date.display(date-format)
+          } else {
+            date.at(0).display(date-format) + [ -- ] + date.at(1).display(date-format)
+          },
+        ),
+
+        // students
+        align(text(weight: "bold", fill: luma(80), TITLEPAGE_STUDENT_ID.at(language)), top),
+        stack(
+          dir: ttb,
+          for author in authors {
+            text([#author.student-id, #author.course])
+            linebreak()
+          },
+        ),
+
+        // company
+        ..if (not at-university) {
+          (
+            align(text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY.at(language)), top),
+            stack(
+              dir: ttb,
+              for author in authors {
+                let company-address = ""
+
+                // company name
+                if (
+                  "name" in author.company and author.company.name != none and author.company.name != ""
+                ) {
+                  company-address += author.company.name
+                } else {
+                  panic(
+                    "Author '"
+                      + author.name
+                      + "' is missing a company name. Add the 'name' attribute to the company object.",
+                  )
+                }
+
+                // company address (optional)
+                if (
+                  "post-code" in author.company and author.company.post-code != none and author.company.post-code != ""
+                ) {
+                  company-address += text([, #author.company.post-code])
+                }
+
+                // company city
+                if (
+                  "city" in author.company and author.company.city != none and author.company.city != ""
+                ) {
+                  company-address += text([, #author.company.city])
+                } else {
+                  panic(
+                    "Author '"
+                      + author.name
+                      + "' is missing the city of the company. Add the 'city' attribute to the company object.",
+                  )
+                }
+
+                // company country (optional)
+                if (
+                  "country" in author.company and author.company.country != none and author.company.country != ""
+                ) {
+                  company-address += text([, #author.company.country])
+                }
+
+                company-address
+                linebreak()
+              },
+            ),
+          )
+        },
+
+        // company supervisor
+        ..if ("company" in supervisor) {
+          (
+            text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY_SUPERVISOR.at(language)),
+            if (type(supervisor.company) == str) { text(supervisor.company) },
+          )
+        },
+
+        // university supervisor
+        ..if ("university" in supervisor) {
+          (
+            text(
+              weight: "bold",
+              fill: luma(80),
+              TITLEPAGE_SUPERVISOR.at(language) + university-short + [:],
+            ),
+            if (type(supervisor.university) == str) { text(supervisor.university) },
+          )
         },
       ),
 
-      // students
-      align(text(weight: "bold", fill: luma(80), TITLEPAGE_STUDENT_ID.at(language)), top),
-      stack(
-        dir: ttb,
-        for author in authors {
-          text([#author.student-id, #author.course])
-          linebreak()
-        }
-      ),
-
-      // company
-      ..if (not at-university) { 
-        (align(text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY.at(language)), top),
-         stack(
-          dir: ttb,
-          for author in authors {
-            let company-address = ""
-
-            // company name
-            if (
-              "name" in author.company and
-              author.company.name != none and
-              author.company.name != ""
-              ) {
-              company-address+= author.company.name
-            } else {
-              panic("Author '" + author.name + "' is missing a company name. Add the 'name' attribute to the company object.")
-            }
-
-            // company address (optional)
-            if (
-              "post-code" in author.company and
-              author.company.post-code != none and
-              author.company.post-code != ""
-              ) {
-              company-address+= text([, #author.company.post-code])
-            }
-
-            // company city
-            if (
-              "city" in author.company and
-              author.company.city != none and
-              author.company.city != ""
-              ) {
-              company-address+= text([, #author.company.city])
-            } else {
-              panic("Author '" + author.name + "' is missing the city of the company. Add the 'city' attribute to the company object.")
-            }
-
-            // company country (optional)
-            if (
-              "country" in author.company and
-              author.company.country != none and
-              author.company.country != ""
-            ) {
-              company-address+= text([, #author.company.country])
-            }
-
-            company-address
-            linebreak()
-          }
-        )
-       )
+      // confidentiality - marker
+      if (confidentiality-marker.display and show-confidentiality-statement) {
+        text(weight: "bold", fill: rgb(226, 0, 26), "Diese Arbeit enthält einen Sperrvermerk")
       },
-
-      // company supervisor
-      ..if ("company" in supervisor) {
-        (
-          text(weight: "bold", fill: luma(80), TITLEPAGE_COMPANY_SUPERVISOR.at(language)),
-          if (type(supervisor.company) == str) {text(supervisor.company)}
-        )
-      },
-
-      // university supervisor
-      ..if ("university" in supervisor) {
-        (
-          text(
-            weight: "bold", fill: luma(80), 
-            TITLEPAGE_SUPERVISOR.at(language) + university-short + [:]
-          ),
-          if (type(supervisor.university) == str) {text(supervisor.university)}
-        )
-      },
-
-    )
+    ),
   )
 }
