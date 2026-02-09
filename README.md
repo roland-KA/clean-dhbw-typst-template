@@ -94,13 +94,9 @@ CAVEAT: The template hasn't been adapted nor tested for more than two authors.
 
 `city (str)`: City of the author (only needed when `at-university` is `true`)
 
-`confidentiality-marker: (dictionary)`: Configure the confidentially marker (red or green circle) on the title page (using this option reduces the maximum number of authors by 2 to 4 authors when in the company or 6 authors when at DHBW)
+`confidentiality-marker: (dictionary)`: Configure the display of a confidentiality indication on the bottom of the titlepage
 
-- display (bool*): Whether the confidentiality marker should be shown, default is `false`
-- offset-x (length): Horizontal offset of the confidentiality marker, default is `0pt`
-- offset-y (length): Vertical offset of the confidentiality marker, default is `0pt`
-- size (length): Size of the confidentiality marker, default is `7em`
-- title-spacing (length): Adds space below the title to make room for the confidentiality marker, default is `2em`
+- display (bool*): Whether the indication should be shown (`(display: true)`), default is `false`
 
 `confidentiality-statement-content (content)`: Provide a custom confidentiality statement
 
@@ -162,6 +158,7 @@ A typical Bachelor Thesis which has _one author_ and takes place in cooperation 
   at-university: false, 
   type-of-thesis: "Bachelorarbeit",
   show-confidentiality-statement: true, // optional, if company desires so
+  confidentiality-marker: (display: true),  // info on the title page, that the document contains a confidentiality statement
   show-declaration-of-authorship: true,
   bibliography: bibliography("sources.bib"),
   date: datetime.today(),
@@ -194,7 +191,6 @@ A typical Studienarbeit which has _two authors_ and takes place at _DHBW only,_ 
   city: "Karlsruhe",
   at-university: true, 
   type-of-thesis: "Studienarbeit",
-  show-confidentiality-statement: true, // optional, if company desires so
   show-declaration-of-authorship: true,
   bibliography: bibliography("sources.bib"),
   date: datetime.today(),
