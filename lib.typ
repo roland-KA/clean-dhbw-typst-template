@@ -90,8 +90,9 @@
   let in-frontmatter = state("in-frontmatter", true)    // to control page number format in frontmatter
   let in-body = state("in-body", true)                  // to control heading formatting in/outside of body
 
-  // customize look of figure
-  set figure.caption(separator: [ --- ], position: bottom)
+  // customize captions
+  set figure.caption(separator: [ -- ], position: bottom)
+  show figure.caption: set text(font: heading-font, size: body-size)
 
   // math numbering
   set math.equation(numbering: math-numbering)
