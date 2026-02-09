@@ -260,9 +260,9 @@ Please consult the `glossarium` docs to see the many variations it offers for fo
 
 In the same way, the `glossarium` package can also be used to create a list of acronyms. To do so, you have to create a separate list (like `glossary-entries` above). Let's call it `acrolist-entries`. Ideally you put it also in a separate file and import it into the main document. 
 
-At the top of the body text you have to call `#register-glossary(acrolist-entrie)` to create the internal representation of that list.
+At the top of the body text you have to call `#register-glossary(acrolist-entries)` to create the internal representation of that list.
 
-There is no automatic inclusion within the appendix (as with the glossary). So you have to that explicitly using the `appendix`-parameter like:
+There is no automatic inclusion within the appendix (as is with the glossary). So you have to do that explicitly using the `appendix`-parameter when calling the template-function like:
 
 ```typst
 appendix: [
