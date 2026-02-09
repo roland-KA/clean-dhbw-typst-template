@@ -44,7 +44,7 @@ This template uses the following fonts (from Google fonts):
 - [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4)
 - [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
 
-If you want to use typst locally, you can download the fonts from the links above and install them on your system (_Hint_: You need the TTF-files located within the `static` subfolders of both font-distributions). Otherwise, when using the web version, add the fonts to your project.
+If you want to use typst locally, you can download the fonts from the links above and install them on your system (_**Hint**_: You need the TTF-files located within the `static` subfolders of both font-distributions – not the variable size version, as **they don't work with Typst**). Otherwise, when using the web version, add the fonts to your project.
 
 For further information on how to add fonts to your project, please refer to the [Typst documentation](https://typst.app/docs/reference/text/text/#parameters-font).
 
