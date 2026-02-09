@@ -204,7 +204,9 @@ A typical Studienarbeit which has _two authors_ and takes place at _DHBW only,_ 
   university-short: "DHBW",
 ``` 
 
-## Glossary
+## Glossary & Acronyms
+
+### Glossary
 
 In order to create a glossary, the [`glossarium`-package](https://typst.app/universe/package/glossarium/) is used. That package defines the glossary being an array of arrays like:
 
@@ -252,4 +254,19 @@ glossary: glossary-entries
 
 Please consult the `glossarium` docs to see the many variations it offers for forming a glossary entry. 
 
-If you want to separate terms with longer glossary descriptions from simple acronyms within the glossary, you can use the `group` selector of `glossarium` in order to divide your entries into these categories.
+### Acronyms
+
+In the same way, the `glossarium` package can also be used to create a list of acronyms. To do so, you have to create a separate list (like `glossary-entries` above). Let's call it `acrolist-entries`. Ideally you put it also in a separate file and import it into the main document. 
+
+At the top of the body text you have to call `#register-glossary(acrolist-entrie)` to create the internal representation of that list.
+
+There is no automatic inclusion within the appendix (as with the glossary). So you have to that explicitly using the `appendix`-parameter like:
+
+```typst
+appendix: [
+  = Abkürzungen
+ 
+  #print-glossary(acrolist-entries)
+]
+
+```
