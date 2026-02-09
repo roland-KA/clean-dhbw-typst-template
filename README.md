@@ -31,9 +31,11 @@ typst init @preview/clean-dhbw MyFancyThesis
 
 Typst will create a new directory (`MyFancyThesis` in this example) with all the files needed to get you started.
 
-## Support
+## Support & Contribution
 
 If you have questions, find bugs or have proposals for new features regarding the template or if you want to contribute, please create an issue in the [GitHub-repo](https://github.com/roland-KA/clean-dhbw-typst-template?tab=readme-ov-file).
+
+If you contribute using a PR, please use a separate Git-branch for your PR.
 
 For more general questions with respect to Typst, please consult the [Typst documentation](https://typst.app/docs/), the [Typst book](https://sitandr.github.io/typst-examples-book/book/about.html) or use the [Typst forum](https://forum.typst.app/), where you find a helpful and responsive community.
 
