@@ -233,6 +233,13 @@
   counter(page).update(0)       // so the first chapter starts at page 1 (now in arabic numbers)
 
   // ========== DOCUMENT BODY ========================================
+  
+  // ---------- Table Format ---------------------------------------
+
+  set table(stroke: (x: none, y: 0.5pt))
+  show table: set text(font: heading-font, size: body-size)
+  show table.cell.where(y: 0): set text(weight: "bold")
+
 
   // ---------- Heading Format (Part II: H1-H4) ---------------------------------------
 
