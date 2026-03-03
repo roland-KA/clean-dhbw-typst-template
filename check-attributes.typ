@@ -7,6 +7,7 @@
   type-of-thesis,
   show-confidentiality-statement,
   show-declaration-of-authorship,
+  show-ai-usage-section,
   show-table-of-contents,
   show-abstract,
   abstract,
@@ -41,6 +42,7 @@
     show-confidentiality-statement: show-confidentiality-statement,
     show-table-of-contents: show-table-of-contents,
     show-declaration-of-authorship: show-declaration-of-authorship,
+    show-ai-usage-section: show-ai-usage-section,
     show-abstract: show-abstract,
   )
 

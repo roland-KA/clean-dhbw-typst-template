@@ -23,6 +23,7 @@ The document defined by the template consists of the following **parts**:
 	- References
 	- Acronyms (*optional*)
 	- Glossary (*optional*)
+	- AI Usage Section (*optional*)
 	- User-defined appendix (*optional*)
 - Legal backmatter
 	- Confidentiality Statement (*optional*)

@@ -5,6 +5,7 @@
 #import "titlepage.typ": *
 #import "confidentiality-statement.typ": *
 #import "declaration-of-authorship.typ": *
+#import "ai-usage-section.typ": *
 #import "check-attributes.typ": *
 
 // Workaround for the lack of an `std` scope.
@@ -19,12 +20,14 @@
   type-of-thesis: none,
   show-confidentiality-statement: true,
   show-declaration-of-authorship: true,
+  show-ai-usage-section: false,
   show-table-of-contents: true,
   show-abstract: true,
   abstract: none,
   appendix: none,
   confidentiality-statement-content: none,
   declaration-of-authorship-content: none,
+  ai-usage-section-content: none,
   titlepage-content: none,
   university: none,
   university-location: none,
@@ -52,6 +55,7 @@
     type-of-thesis,
     show-confidentiality-statement,
     show-declaration-of-authorship,
+    show-ai-usage-section,
     show-table-of-contents,
     show-abstract,
     abstract,
@@ -309,6 +313,15 @@
   if (glossary != none) {
     heading(level: 1, GLOSSARY.at(language))
     print-glossary(glossary)
+  }
+
+  // ---------- AI Usage Section ---------------------------------------
+
+  if (show-ai-usage-section) {
+    ai-usage-section(
+      ai-usage-section-content,
+      language,
+    )
   }
 
   // ---------- Appendix (other contents) ---------------------------------------
