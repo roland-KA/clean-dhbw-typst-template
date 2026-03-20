@@ -26,6 +26,7 @@ The document defined by the template consists of the following **parts**:
 	- User-defined appendix (*optional*)
 - Legal backmatter
 	- Confidentiality Statement (*optional*)
+	- AI Usage Section (*optional*)
 	- Declaration of Authorship 
 
 I've added the "*optional*" markers from a content viewpoint to the elements in the list above. I.e. I consider them optional in a thesis or a similar document. On a technical level all components can be switched off, if desired.

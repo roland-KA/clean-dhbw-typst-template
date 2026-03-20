@@ -41,6 +41,11 @@
 
 #let DECLARATION_OF_AUTHORSHIP_SECTION_B_PLURAL = "selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt haben. Wir versichern zudem, dass alle eingereichten Fassungen übereinstimmen."
 
+#let AI_USAGE_SECTION_TITLE = (
+  "de": "Verwendung von KI",
+  "en": "Usage of AI",
+)
+
 #let CONFIDENTIALITY_STATEMENT_TITLE = (
   "de": "Sperrvermerk",
   "en": "Confidentiality Statement",

@@ -102,6 +102,8 @@ CAVEAT: The template hasn't been adapted nor tested for more than two authors.
 
 `confidentiality-statement-content (content)`: Provide a custom confidentiality statement
 
+`ai-usage-section-content (content)`: Provide custom content for the AI usage section (e.g. a table of used tools)
+
 `date (datetime* | array*)`: Provide a datetime object to display one date (e.g. submission date) or a array containing two datetime objects to display a date range (e.g. start and end date of the project), default is `datetime.today()`
 
 `date-format (str)`: Format of the displayed dates, default is `"[day].[month].[year]"` (for more information on possible formats check the [Typst documentation](https://typst.app/docs/reference/foundations/datetime/#format))
@@ -123,6 +125,8 @@ CAVEAT: The template hasn't been adapted nor tested for more than two authors.
 `show-confidentiality-statement (bool)`: Whether the confidentiality statement should be shown, default is `true`
 
 `show-declaration-of-authorship (bool)`: Whether the declaration of authorship should be shown, default is `true`
+
+`show-ai-usage-section (bool)`: Whether the AI usage section should be shown (placed after glossary and before user-defined appendix), default is `false`
 
 `show-table-of-contents (bool)`: Whether the table of contents should be shown, default is `true`
 
