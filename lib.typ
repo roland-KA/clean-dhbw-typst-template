@@ -315,15 +315,6 @@
     print-glossary(glossary)
   }
 
-  // ---------- AI Usage Section ---------------------------------------
-
-  if (show-ai-usage-section) {
-    ai-usage-section(
-      ai-usage-section-content,
-      language,
-    )
-  }
-
   // ---------- Appendix (other contents) ---------------------------------------
 
   if (appendix != none) {       // the user has to provide heading(s)
@@ -347,6 +338,15 @@
       language,
       many-authors,
       date-format,
+    )
+  }
+
+  // ---------- AI Usage Section ---------------------------------------
+
+  if (show-ai-usage-section) {
+    ai-usage-section(
+      ai-usage-section-content,
+      language,
     )
   }
 
