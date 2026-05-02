@@ -18,17 +18,9 @@
     declaration-of-authorship-content
   } else {
     if (authors.len() == 1) {
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_A_SINGLE)
-      v(1em)
-      align(center, text(weight: "bold", title))
-      v(1em)
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_B_SINGLE)
+      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE)
     } else {
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_A_PLURAL)
-      v(1em)
-      align(center, text(weight: "bold", title))
-      v(1em)
-      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_B_PLURAL)
+      par(justify: true, DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL)
     }
   }
 

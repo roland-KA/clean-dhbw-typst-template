@@ -21,27 +21,8 @@
   } else {
     let authors-by-company = authors.map(author => author.company.name).dedup()
     let authors-by-study = authors.map(author => author.course-of-studies).dedup()
-    let companies = authors-by-company.join(", ", last: AND.at(language))
 
-    let institution = if (authors-by-company.len() == 1) {
-      INSTITUTION_SINGLE.at(language)
-    } else {
-      INSTITUTION_PLURAL.at(language)
-    }
-
-    text(CONFIDENTIALITY_STATEMENT_SECTION_A.at(language))
-    v(1em)
-    align(
-      center,
-      text(weight: "bold", title),
-    )
-
-    v(1em)
-
-    par(
-      justify: true,
-      CONFIDENTIALITY_STATEMENT_SECTION_B.at(language) + [ ] + companies + CONFIDENTIALITY_STATEMENT_SECTION_C.at(language) + [ ] + authors-by-study.join(" | ") + CONFIDENTIALITY_STATEMENT_SECTION_D.at(language) + university + [ ] + university-location + CONFIDENTIALITY_STATEMENT_SECTION_E.at(language) + institution + [ (#companies)] + CONFIDENTIALITY_STATEMENT_SECTION_F.at(language),
-    )
+    text(CONFIDENTIALITY_STATEMENT_SECTION.at(language))
   }
 
   let end-date = if (type(date) == datetime) {
