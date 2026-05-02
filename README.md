@@ -8,7 +8,7 @@ You can see an example of how the template looks in this [PDF file](https://gith
 
 In my experience as an end-user (i.e. reader) of documents like Bachelor theses and similar works which are currently produced at DHBW, there is room for improvement with respect to their usability.  There exists a recommendation at DHBW on how to structure and design such documents. I have the impression that some of the usability issues I identified are rooted directly within these recommendations, but others stem from the fact that some recommendations are just not thoroughly followed.
 
-In order to give an example on how an improved document structure and layout could look like, I have created the present "*Clean DHBW Typst Template*". In the meantime it is the official Typst template for Computer Science at DHBW Karlsruhe. But of course anyone interested is welcome to use it too.
+In order to give an example on how an improved document structure and layout could look like, I have created the present "*Clean DHBW Typst Template*". It is now the official Typst template for Computer Science at DHBW Karlsruhe. But of course anyone interested is welcome to use it too.
 
 Of course such a concept is always a bit biased in some way. Therefore I explain the whys and hows below and I'm looking forward to the discussions it will provoke 😃. The name has been chosen in the sense "clean" is used in Software Engineering in terms like *clean architecture* or *clean code*, where it describes concepts and structures which are easy to understand, to use und to maintain. Furthermore they have a clear separation of concerns and responsibilities – for the case at hand that means: the template defines the typography, whereas the author is responsible for the contents.
 
@@ -35,7 +35,7 @@ Typst will create a new directory (`MyFancyThesis` in this example) with all the
 
 If you have questions, find bugs or have proposals for new features regarding the template or if you want to contribute, please create an issue in the [GitHub-repo](https://github.com/roland-KA/clean-dhbw-typst-template?tab=readme-ov-file).
 
-If you contribute using a PR, please use a separate Git-branch for your PR.
+If you contribute using a PR, please use **a separate Git-branch** for your PR.
 
 For more general questions with respect to Typst, please consult the [Typst documentation](https://typst.app/docs/), the [Typst book](https://sitandr.github.io/typst-examples-book/book/about.html) or use the [Typst forum](https://forum.typst.app/), where you find a helpful and responsive community.
 
@@ -46,7 +46,7 @@ This template uses the following fonts (from Google fonts):
 - [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4)
 - [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
 
-If you want to use typst locally, you can download the fonts from the links above and install them on your system (_**Hint**_: You need the TTF-files located within the `static` subfolders of both font-distributions – not the variable size version, as **they don't work with Typst**). Otherwise, when using the web version, add the fonts to your project.
+These fonts **must be installed** in order for the template to function correctly. If you want to use typst locally, you can download the fonts from the links above and install them on your system (_**Important**_: You need the TTF-files located within the `static` subfolders of both font-distributions – not the variable size version, as **they don't work with Typst**). Otherwise, when using the web version, add the fonts to your project.
 
 For further information on how to add fonts to your project, please refer to the [Typst documentation](https://typst.app/docs/reference/text/text/#parameters-font).
 
@@ -94,7 +94,7 @@ CAVEAT: The template hasn't been adapted nor tested for more than two authors.
 
 `bib-style (str)`: Style of the bibliography, default is `ieee`
 
-`city (str)`: City of the author (only needed when `at-university` is `true`)
+`city (str)`: City of the author (only **needed** when `at-university` is `true`; e.g. for a Studienarbeit)
 
 `confidentiality-marker: (dictionary)`: Configure the display of a confidentiality indication on the bottom of the titlepage
 
