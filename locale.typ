@@ -33,9 +33,9 @@
   "en": "Declaration of Authorship",
 )
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlich wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde."
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlich wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde."
 
 #let AI_USAGE_SECTION_TITLE = (
   "de": "Verwendung von KI",
