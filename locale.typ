@@ -1,6 +1,6 @@
 #let TITLEPAGE_SECTION_B = (
   "de": "Studiengang ",
-  "en": "Course of Studies ",
+  "en": "Degree Program ",
 )
 
 #let TITLEPAGE_DATE = (
@@ -20,7 +20,7 @@
 
 #let TITLEPAGE_COMPANY_SUPERVISOR = (
   "de": "Betreuer im Unternehmen:",
-  "en": "Supervisor in the Company:",
+  "en": "Company Supervisor:",
 )
 
 #let TITLEPAGE_SUPERVISOR = (
@@ -33,13 +33,19 @@
   "en": "Declaration of Authorship",
 )
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_SINGLE = (
+  "de": "Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig verfasst, keine anderen als die angegebenen Quellen und Hilfsmittel verwendet und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und dass sie bislang nicht veröffentlicht wurde.",
+  "en": "I hereby declare that I wrote this work independently, used no sources or aids other than those specified, have not submitted this work for any other examination with the same or comparable content, and that it has not previously been published.",
+)
 
-#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet habe und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt habe und diese bislang nicht veröffentlicht wurde."
+#let DECLARATION_OF_AUTHORSHIP_SECTION_PLURAL = (
+  "de": "Wir versichern hiermit, dass wir die vorliegende Arbeit selbstständig verfasst, keine anderen als die angegebenen Quellen und Hilfsmittel verwendet und diese Arbeit bei keiner anderen Prüfung mit gleichem oder vergleichbarem Inhalt vorgelegt haben und dass sie bislang nicht veröffentlicht wurde.",
+  "en": "We hereby declare that we wrote this work independently, used no sources or aids other than those specified, have not submitted this work for any other examination with the same or comparable content, and that it has not previously been published.",
+)
 
 #let AI_USAGE_SECTION_TITLE = (
   "de": "Verwendung von KI",
-  "en": "Usage of AI",
+  "en": "Use of AI",
 )
 
 #let CONFIDENTIALITY_STATEMENT_TITLE = (
@@ -48,23 +54,23 @@
 )
 
 #let CONFIDENTIALITY_STATEMENT_SECTION = (
-  "de": "Der Inhalt dieser Arbeit darf weder als Ganzes noch in Auszügen Personen außerhalb des Prüfungsprozesses und des Evaluationsverfahrens zugänglich gemacht werden, sofern keine anders lautende Genehmigung des Dualen Partners vorliegt.",
+  "de": "Der Inhalt dieser Arbeit darf weder als Ganzes noch in Auszügen Personen außerhalb des Prüfungsprozesses und des Evaluationsverfahrens zugänglich gemacht werden, sofern keine anderslautende Genehmigung des Dualen Partners vorliegt.",
   "en": "The content of this thesis may not be made available, either in its entirety or in excerpts, to persons outside of the examination process and the evaluation process, unless otherwise authorized by the corporate partner.",
 )
 
 #let CONFIDENTIALITY_MARKER = (
   "de": "Diese Arbeit enthält einen Sperrvermerk",
-  "en": "This thesis contains a confidentiality notice",
+  "en": "This thesis contains a confidentiality statement",
 )
 
 #let INSTITUTION_SINGLE = (
   "de": "Ausbildungsstätte",
-  "en": "institution",
+  "en": "training institution",
 )
 
 #let INSTITUTION_PLURAL = (
   "de": "Ausbildungsstätten",
-  "en": "institutions",
+  "en": "training institutions",
 )
 
 #let AND = (
@@ -84,7 +90,7 @@
 
 #let ACRONYMS = (
   "de": "Abkürzungen",
-  "en": "Acronyms",
+  "en": "Abbreviations",
 )
 
 #let GLOSSARY = (
